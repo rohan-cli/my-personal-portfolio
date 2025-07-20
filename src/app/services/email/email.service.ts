@@ -3,7 +3,7 @@ import { Observable, from } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import emailjs from '@emailjs/browser';
-import { environment } from '../../../environment/environment.template';
+import { environment } from '../../../environment/environment.prod';
 
 export interface EmailData {
   name: string;
