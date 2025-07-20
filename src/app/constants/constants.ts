@@ -72,6 +72,13 @@ export const PORTFOLIOS = [
     repo: 'https://github.com/rohan-cli/weather-dashboard-app',
     link: 'https://weather-dashboard-app-dev1.netlify.app/',
     img: 'project/weather-app.png'
+  },
+  {
+    title: 'Personal Portfolio',
+    keyword: 'Angular',
+    repo: 'https://github.com/rohan-cli/my-personal-portfolio',
+    link: 'https://my-personal-portfolio-dev.netlify.app/',
+    img: 'img/bg.jpeg'
   }
 ];
 
