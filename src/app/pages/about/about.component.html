@@ -1,0 +1,72 @@
+<app-main-layout>
+      <header class="text-center pt-5">
+        <app-title 
+          title="About" 
+          specific="Me" 
+          [className]="'display-2 fw-bold'">
+        </app-title>
+      </header>
+
+      <section class="row align-items-center mt-5">
+        <div class="col-lg-6">
+          <div class="bg-image rounded-3 mb-4 mb-lg-0"></div>
+        </div>
+        <div class="col-lg-6">
+          <app-title>
+            <h1 class="display-6 fw-bold">
+              <span class="text-primary">Front</span>-End Developer
+            </h1>
+          </app-title>
+          <div class="row mt-4">
+            <div class="col-sm-6">
+              <app-pair-title [content]="personLeft"></app-pair-title>
+            </div>
+            <div class="col-sm-6">
+              <app-pair-title [content]="personRight"></app-pair-title>
+            </div>
+          </div>
+          <div class="d-flex gap-3 mt-4">
+            <app-button 
+              title="Download CV" 
+              [className]="'btn btn-primary'"
+              (click)="downloadCV()">
+            </app-button>
+            <app-button 
+              title="Hire Me" 
+              [className]="'btn btn-outline-primary'"
+              [routerLink]="'/contact'">
+            </app-button>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-5">
+        <div class="mb-4">
+          <app-title 
+            title="About" 
+            specific="Me" 
+            [className]="'display-5 fw-bold'">
+          </app-title>
+          <app-text-box [text]="aboutText"></app-text-box>
+        </div>
+      </section>
+
+      <section class="mt-5">
+        <div class="mb-4">
+          <app-title 
+            title="What" 
+            specific="I'm Doing" 
+            [className]="'display-5 fw-bold'">
+          </app-title>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4" *ngFor="let item of doing">
+            <app-text-box 
+              [icon]="item.icon" 
+              [title]="item.title" 
+              [sub]="item.sub">
+            </app-text-box>
+          </div>
+        </div>
+      </section>
+    </app-main-layout>

@@ -1,0 +1,93 @@
+<app-main-layout>
+      <header class="text-center pt-5 mb-5">
+        <app-title 
+          title="Get" 
+          specific="in Touch" 
+          [className]="'display-2 fw-bold'"
+          sub="Contact to me with ...">
+        </app-title>
+      </header>
+
+      <section class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <app-icon-title
+            icon="<i class='fas fa-phone display-4 text-primary'></i>"
+            title="Call"
+            [sub]="phoneNumber"
+            [className]="'h4'">
+          </app-icon-title>
+        </div>
+        <div class="col-lg-4">
+          <app-icon-title
+            icon="<i class='fab fa-linkedin display-4 text-primary'></i>"
+            title="LinkedIn"
+            [sub]="linkedinUrl"
+            [className]="'h4'"
+            [linked]="true">
+          </app-icon-title>
+        </div>
+        <div class="col-lg-4">
+          <app-icon-title
+            icon="<i class='fas fa-envelope display-4 text-primary'></i>"
+            title="Email"
+            [sub]="email"
+            [className]="'h4'">
+          </app-icon-title>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="row g-3">
+            <div class="col-lg-6">
+              <app-field
+                type="text"
+                placeholder="Name"
+                formControlName="name"
+                [hasError]="!!(contactForm.get('name')?.invalid && contactForm.get('name')?.touched)"
+                [errorMessage]="getErrorMessage('name')">
+              </app-field>
+            </div>
+            <div class="col-lg-6">
+              <app-field
+                type="email"
+                placeholder="Email"
+                formControlName="email"
+                [hasError]="!!(contactForm.get('email')?.invalid && contactForm.get('email')?.touched)"
+                [errorMessage]="getErrorMessage('email')">
+              </app-field>
+            </div>
+          </div>
+          <app-field
+            type="text"
+            placeholder="Subject"
+            formControlName="subject"
+            [hasError]="!!(contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched)"
+            [errorMessage]="getErrorMessage('subject')">
+          </app-field>
+          <app-field
+            type="text"
+            placeholder="Message"
+            formControlName="message"
+            [textarea]="true"
+            [hasError]="!!(contactForm.get('message')?.invalid && contactForm.get('message')?.touched)"
+            [errorMessage]="getErrorMessage('message')">
+          </app-field>
+          <app-button
+            title="Send Message"
+            [className]="'btn btn-primary btn-lg mt-3'"
+            type="submit"
+            [disabled]="loading || contactForm.invalid">
+          </app-button>
+        </form>
+      </section>
+
+      <app-toast 
+        [message]="toastMessage" 
+        [type]="toastType" 
+        [show]="showToast"
+        (close)="hideToast()">
+      </app-toast>
+      
+      <app-copyright></app-copyright>
+    </app-main-layout>

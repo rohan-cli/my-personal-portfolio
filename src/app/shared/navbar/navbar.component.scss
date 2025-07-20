@@ -1,0 +1,13 @@
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.nav-link.active {
+  color: #007bff !important;
+  font-weight: bold;
+}
+
+nav.navbar {
+  z-index: 1050;
+  position: relative;
+}

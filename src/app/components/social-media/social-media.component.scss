@@ -1,0 +1,9 @@
+.social-link {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #007bff;
+  }
+}

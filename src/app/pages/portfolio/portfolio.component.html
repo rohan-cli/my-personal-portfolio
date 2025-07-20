@@ -1,0 +1,36 @@
+<app-main-layout>
+      <header class="text-center pt-5">
+        <app-title 
+          title="My" 
+          specific="Portfolio" 
+          [className]="'display-2 fw-bold'">
+        </app-title>
+      </header>
+
+      <section class="d-flex flex-wrap justify-content-center gap-3 mt-5">
+        <app-button
+          title="all"
+          [className]="'btn ' + (filter === 'all' ? 'btn-primary' : 'btn-outline-primary')"
+          [active]="filter === 'all'"
+          (buttonClick)="setFilter('all')">
+        </app-button>
+        <app-button
+          *ngFor="let keyword of keywords"
+          [title]="keyword"
+          [className]="'btn ' + (filter === keyword ? 'btn-primary' : 'btn-outline-primary')"
+          [active]="filter === keyword"
+          (buttonClick)="setFilter(keyword)">
+        </app-button>
+      </section>
+
+      <section class="row g-4 mt-4">
+        <div class="col-lg-4 col-md-6" *ngFor="let portfolio of filteredPortfolios">
+          <app-card 
+            [title]="portfolio.title" 
+            [img]="portfolio.img" 
+            [repo]="portfolio.repo" 
+            [link]="portfolio.link">
+          </app-card>
+        </div>
+      </section>
+    </app-main-layout>

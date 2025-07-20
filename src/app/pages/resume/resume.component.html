@@ -1,0 +1,83 @@
+<app-main-layout>
+      <header class="text-center pt-5 mb-4">
+        <app-title 
+          title="My" 
+          specific="Resume" 
+          [className]="'display-2 fw-bold'">
+        </app-title>
+      </header>
+
+      <section class="mb-5">
+        <app-title 
+          title="Education" 
+          [className]="'h3 mb-4'"
+          icon="fas fa-graduation-cap text-primary me-3">
+        </app-title>
+        <app-text-box className="row g-4 pt-5 mt-1">
+          <div class="col-lg-6" *ngFor="let edu of education">
+            <app-step 
+              [title]="edu.title" 
+              [sub]="edu.sub" 
+              [desc]="edu.desc">
+            </app-step>
+          </div>
+        </app-text-box>
+      </section>
+
+      <section class="mb-5">
+        <app-title 
+          title="Experience" 
+          [className]="'h3 mb-4'"
+          icon="fas fa-briefcase text-primary me-3">
+        </app-title>
+        <app-text-box className="row g-4 mt-1">
+          <div class="col-lg-6" *ngFor="let exp of experience">
+            <app-step 
+              [title]="exp.title" 
+              [sub]="exp.sub" 
+              [desc]="exp.desc">
+            </app-step>
+          </div>
+        </app-text-box>
+      </section>
+
+      <section class="mb-5">
+        <app-title 
+          title="Language" 
+          specific="Skills" 
+          [className]="'h3 mb-4'">
+        </app-title>
+        <app-text-box>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-semibold">English</span>
+                <app-rating star="5"></app-rating>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="fw-semibold">Hindi</span>
+                <app-rating star="5"></app-rating>
+              </div>
+            </div>
+          </div>
+        </app-text-box>
+      </section>
+
+      <section class="mb-5">
+        <app-title 
+          title="Work" 
+          specific="Skills" 
+          [className]="'h3 mb-4'">
+        </app-title>
+        <app-text-box className="row g-4 mt-1">
+          <div class="col-lg-6" *ngFor="let skill of skills">
+            <app-progress-bar 
+              [skill]="skill.skill" 
+              [percent]="skill.percent">
+            </app-progress-bar>
+          </div>
+        </app-text-box>
+      </section>
+    </app-main-layout>

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg" 
+     [class.navbar-dark]="isDarkMode" 
+     [class.navbar-light]="!isDarkMode"
+     [class.bg-dark]="isDarkMode" 
+     [class.bg-light]="!isDarkMode">
+  <div class="container">
+    <a class="navbar-brand fw-bold" routerLink="/">Portfolio</a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/resume" routerLinkActive="active">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+        </li>
+        <li class="nav-item pt-1">
+          {{isDarkMode}}
+          <button 
+            class="btn btn-sm ms-2 theme-toggle-btn" 
+            [class.btn-outline-light]="isDarkMode" 
+            [class.btn-outline-dark]="!isDarkMode"
+            (click)="toggleTheme()"
+            [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+          >
+            <i class="fas" [class.fa-sun]="isDarkMode" [class.fa-moon]="!isDarkMode"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,30 @@
+<app-main-layout>
+    <div class="hero-section d-flex align-items-center position-fixed w-100 h-100"
+        [style.background-image]="backgroundImage">
+        <div class="container text-white">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="display-4 fw-bold mb-4">
+                        <span class="hi-text">
+                            Hi
+                            <i class="fas fa-hand-paper hi-wave-icon float-effect ms-1 me-5"></i>
+                        </span>I'M {{ name }}
+                    </h1>
+                    <h2 class="h3 mb-4">
+                        <app-typewriter></app-typewriter>
+                    </h2>
+                    <p class="lead mb-4">
+                        Your work is going to fill a large part of your life, and the only way to be <br/> 
+                        truly satisfied is to do what you believe is great work. And the only way to <br/>
+                        do  great work is to love what you do. - Steve Jobs
+                    </p>
+                    <div class="d-flex gap-3">
+                        <app-social-media *ngFor="let social of socialMedia" [icon]="social.icon" [link]="social.link">
+                        </app-social-media>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-particles></app-particles>
+</app-main-layout>

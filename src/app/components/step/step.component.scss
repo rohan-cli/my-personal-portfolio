@@ -1,0 +1,11 @@
+.step-item {
+  position: relative;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.step-item:hover {
+  background-color: #e9ecef;
+  transform: translateX(5px);
+}

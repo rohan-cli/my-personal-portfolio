@@ -1,0 +1,6 @@
+<div class="main-layout" [class.no-style]="noStyle">
+      <app-navbar *ngIf="!noStyle"></app-navbar>
+      <div class="container-fluid" [class.p-0]="noStyle">
+        <ng-content></ng-content>
+      </div>
+    </div>
